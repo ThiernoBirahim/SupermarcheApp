@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Supermarché - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-content">
+        <h1><span class="icon">🛒</span> Supermarché <span class="subtitle">Gestion des Caisses</span></h1>
+    </div>
+</header>
+
+<main class="dashboard">
+    <aside class="sidebar">
+        <div class="control-panel">
+            <div class="groupe card">
+                <h3><span class="icon">👤</span> Ajouter un client</h3>
+                <div class="input-group">
+                    <input type="text" id="nomClient" placeholder="Nom du client">
+                </div>
+                <div class="input-group">
+                    <input type="number" id="nbArticles" placeholder="Nb articles" min="1">
+                </div>
+                <button class="btn-primary" onclick="ajouterClient()">➕ Ajouter</button>
+            </div>
+
+            <div class="groupe card">
+                <h3><span class="icon">⚙️</span> Actions caisse</h3>
+                <div class="input-group">
+                    <input type="number" id="numeroCaisse" placeholder="Numéro caisse" min="1">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-success" onclick="servirClient()">✅ Servir</button>
+                    <button class="btn-warning" onclick="ouvrirCaisse()">🔓 Ouvrir</button>
+                    <button class="btn-danger" onclick="fermerCaisse()">🔒 Fermer</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <section class="main-content">
+        <div class="stats-banner card">
+            <div class="stat-item">
+                <span class="stat-icon">👥</span>
+                <div class="stat-details">
+                    <span class="stat-label">Total clients servis</span>
+                    <strong class="stat-value" id="totalServis">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="grille-caisses" class="grid-caisses">
+            <!-- Les caisses seront générées ici par app.js -->
+        </div>
+    </section>
+</main>
+
+<div id="message"></div>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>
